@@ -213,8 +213,6 @@ async function toggleTaskStatus(id, newStatus) {
 
 // Delete Task (DELETE /tasks?id=eq.X)
 async function deleteTask(id) {
-  if (!confirm("Are you sure you want to delete this task?")) return;
-
   try {
     const endpoint = `${config.supabaseUrl}/rest/v1/${config.tableName}?id=eq.${id}`;
     const res = await fetch(endpoint, {
